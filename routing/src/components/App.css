@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  /* background-color: lightpink; */
+}
+
+
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li{
+  /* border: 5px solid blue; */
+  padding: 15px;
+  list-style: none;
+  width: 10%;
+}
+

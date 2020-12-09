@@ -1,0 +1,61 @@
+
+.central {
+    position: relative;
+    margin: 0 auto;
+    height: 70vh;
+    width: 95%;
+    background-color: transparent;
+    box-shadow: 0 0 5px 1px lightgray;   
+}
+
+.photos{
+    margin: 0 auto;
+    height: 100%;
+}
+
+.photo img{
+    width: 100%;
+    display: block;
+    height: inherit;
+}
+
+img{
+    height: 100%;
+}
+
+.newPhotos{
+    transition: all 0.5s ease-in-out;
+    opacity: 0.5;
+}
+
+.btns{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btns .fas{
+    font-size: 35px;
+    background: pink;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+}
+
+.btns .fas:hover{
+    opacity: 1;
+}
+
+/* @media(min-width:664px){
+    .central{
+        height: 70vh;
+        width: 60px;
+    }
+} */
