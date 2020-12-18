@@ -1,7 +1,12 @@
+
+
+
 .App {
   text-align: center;
-  /* background-color: lightpink; */
+  background-color: rgb(249, 232, 234);
+ 
 }
+
 
 
 
@@ -15,6 +20,12 @@ li{
   /* border: 5px solid blue; */
   padding: 15px;
   list-style: none;
-  width: 10%;
+  /* width: 10%; */
 }
 
+
+
+.MuiButton-containedPrimary{
+  background-color: red;
+
+}

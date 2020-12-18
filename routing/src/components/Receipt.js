@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import Menu from '../img/menu.jpg'
 
 const useStyles = makeStyles({
   root: {
@@ -23,31 +22,35 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
-
-class Order extends Component {
-  constructor() {
+class Receipt extends Component {
+  constructor(props) {
     super();
-
-    this.state = {
-      name: "",
-      email: "",
-      phone: "",
-      event: "",
-      address: "",
-      date: "",
-      description: "",
-    };
+    this.state ={
+        orders: []
+    }
+    console.log(props);
   }
 
-  changeHandler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  componentDidMount() {
+    axios
+      .get(`https://sweetsnaxapi.herokuapp.com/orders/${this.props.match.params.email}`)
+      .then((response) => {
+        console.log(response);
+        const orders = response.data[0];
+        console.log(orders);
+        this.setState({orders: orders})
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
 
   submitHandler = (e) => {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("https://sweetsnaxapi.herokuapp.com/order/new", this.state)
+      .put(`https://sweetsnaxapi.herokuapp.com/update/${this.props.match.params.email}`, this.state)
       .then((response) => {
         console.log(response);
         alert("Order been placed thank you")
@@ -57,92 +60,91 @@ class Order extends Component {
       });
   };
 
-  render() {
-    const {
-      name,
-      email,
-      phone,
-      event,
-      address,
-      date,
-      description,
-    } = this.state;
+
+
+
+
+
+  render(props) {
+      console.log(this.state.orders)
     return (
-      <div className="page">
-        <div className="cardItems">
+      <div className="cardItems">
         <Card>
           <h1>Place Order</h1>
           <form onSubmit={this.submitHandler}>
             <div className="items">
               <TextField
-                placeholder="Full Name"
+                // placeholder="Full Name"
                 name="name"
-                value={name}
+                // value={name}
+                value={this.state.orders.name}
                 variant="outlined"
                 onChange={this.changeHandler}
               />
               <TextField
-                placeholder="Email"
-                name="email"
-                value={email}
+                // placeholder="Email"
+                // name="email"
+                // value={email}
+                value={this.state.orders.email}
                 variant="outlined"
                 onChange={this.changeHandler}
               />
               <TextField
-                placeholder="336-555-1155"
-                name="phone"
-                value={phone}
+                // placeholder="336-555-1155"
+                // name="phone"
+                // value={phone}
+                value={this.state.orders.phone}
                 variant="outlined"
                 onChange={this.changeHandler}
               />
               <TextField
-                placeholder="Event"
-                name="event"
-                value={event}
+                // placeholder="Event"
+                // name="event"
+                // value={event}
+                value={this.state.orders.event}
                 variant="outlined"
                 onChange={this.changeHandler}
               />
               <TextField
-                placeholder="Address"
-                name="address"
-                value={address}
+                // placeholder="Address"
+                // name="address"
+                // value={address}
+                value={this.state.orders.address}
                 variant="outlined"
                 onChange={this.changeHandler}
               />
               <TextField
-                placeholder="Date"
-                type="date"
-                name="date"
-                value={date}
+                // placeholder="Date"
+                // type="date"
+                // name="date"
+                // value={date}
+                value={this.state.orders.date}
                 onChange={this.changeHandler}
                 variant="outlined"
               />
               <TextField
-                placeholder="Description"
-                name="description"
-                value={description}
+                // placeholder="Description"
+                // name="description"
+                // value={props.orders.description}
                 onChange={this.changeHandler}
                 multiline
                 rows={10}
-                defaultValue="Default Value"
+                value={this.state.orders.description}
                 variant="outlined"
               />
 
               <Button variant="outlined" color="primary" type="submit">
-                Place Order
+                Update Order
+              </Button>
+              <Button variant="outlined" color="primary" type="submit">
+                Delete Order
               </Button>
             </div>
           </form>
         </Card>
       </div>
-      <img alt="" src={Menu} height="300" width="200px" id="menu"/>
-
-      </div>
-      
-
-
     );
   }
 }
 
-export default Order;
+export default Receipt;

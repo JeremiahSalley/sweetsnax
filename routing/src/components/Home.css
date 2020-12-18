@@ -1,0 +1,35 @@
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    /* display: flex; */
+    flex-direction: row;
+    background-color: #95dada;
+    border: 10px solid #95dada;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    /* width: 1367px; */
+    padding-left: 0px;
+    padding-right: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.slideshow1, .slideshow2, .slideshow3, .slideshow4{
+    background-color: #95dada;
+    border: 5px solid white;
+    border-radius: 5px;
+    padding: 0px;
+    background-color: white;
+}
+
+.slideshow1:hover, .slideshow2:hover, .slideshow3:hover, .slideshow4:hover{
+    transform: scale(1.05);
+}

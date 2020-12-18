@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import './Slide.css'
+// import slideshow1 from '../img/slideshow1.jpg'
+// import slideshow2 from '../img/slideshow2.jpg'
+// import slideshow3 from '../img/slideshow3.jpg'
+// import slideshow4 from '../img/slideshow4.jpg'
 
 export default class Slider extends Component{
 
@@ -65,12 +69,11 @@ componentWillUnmount(){
 
 
 
-
   render() {
     return (
       <div className='central'>
         <div className={this.state.anim?'newPhotos photos': 'photos'}>
-          <img src={`./img/slideshow${this.state.count}.jpg`} alt=''/>
+          <img src={`../img/slideshow${this.state.count}.jpg`} alt=''/>
         </div>
 
         <div className="btns">

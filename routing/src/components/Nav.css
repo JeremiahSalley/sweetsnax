@@ -1,3 +1,20 @@
-img{
-    height: 230px;
+/* img{
+    top: 187px;
+    position: relative;
+    height: 150px;
+
+} */
+
+img#logo{
+    height: 447px;
+    width: 305px;
+}
+
+li{
+    width: 130px;
+    
+}
+
+#butt{
+    background-color: #D20C19;
 }

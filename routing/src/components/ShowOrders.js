@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import Menu from '../img/menu.jpg'
 
 const useStyles = makeStyles({
   root: {
@@ -24,9 +23,9 @@ const useStyles = makeStyles({
   },
 });
 
-class Order extends Component {
-  constructor() {
-    super();
+class ShowOrder extends Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       name: "",
@@ -50,7 +49,7 @@ class Order extends Component {
       .post("https://sweetsnaxapi.herokuapp.com/order/new", this.state)
       .then((response) => {
         console.log(response);
-        alert("Order been placed thank you")
+        alert("Order have placed")
       })
       .catch((error) => {
         console.log(error);
@@ -68,8 +67,7 @@ class Order extends Component {
       description,
     } = this.state;
     return (
-      <div className="page">
-        <div className="cardItems">
+      <div className="cardItems">
         <Card>
           <h1>Place Order</h1>
           <form onSubmit={this.submitHandler}>
@@ -135,14 +133,8 @@ class Order extends Component {
           </form>
         </Card>
       </div>
-      <img alt="" src={Menu} height="300" width="200px" id="menu"/>
-
-      </div>
-      
-
-
     );
   }
 }
 
-export default Order;
+export default ShowOrder;

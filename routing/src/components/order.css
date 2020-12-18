@@ -1,0 +1,55 @@
+.container{
+    font-size: 25px;
+    /* box-shadow: 0 0px 0px 0, 0 3px 31px 0 #00CCCC; */
+}
+
+.page{
+    /* width: 0px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red;  */
+     flex-wrap: wrap; 
+    justify-content: space-evenly;
+    padding-left: 0px;
+    
+    /* text-align: center; */
+    /* height: 300px; */
+}
+
+.cardItems{
+    box-shadow: 0 4px 30px 0 rgba(212, 5, 5, 0.787), 0 6px 20px 0 rgba(202, 7, 7, 0.931);
+    margin-left: 38px;
+    width: 767px;
+}
+
+.items{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    /* border: 3px solid blue; */
+    order: 10;
+    align-content: space-around;
+    width: 762px;
+    
+}
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#menu {
+    width: 550px;
+    height: 800px;
+    float: right;
+    border: 5px solid white;
+    padding: 5px;
+    margin: 10px;
+
+}
+

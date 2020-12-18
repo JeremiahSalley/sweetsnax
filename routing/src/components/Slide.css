@@ -3,7 +3,7 @@
     position: relative;
     margin: 0 auto;
     height: 70vh;
-    width: 95%;
+    width: 550px;
     background-color: transparent;
     box-shadow: 0 0 5px 1px lightgray;   
 }
@@ -11,6 +11,7 @@
 .photos{
     margin: 0 auto;
     height: 100%;
+    width: 550px;
 }
 
 .photo img{
@@ -21,6 +22,7 @@
 
 img{
     height: 100%;
+    width: 76%;
 }
 
 .newPhotos{
